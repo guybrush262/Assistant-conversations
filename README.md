@@ -7,7 +7,7 @@ The project aim to save conversations with Assist so that future conversations c
 2.	Recalling past conversations by the conversation agent reading the database via referencing it in the prompt of the conversationa agent integration service. Note that it cannot directly read a file, so we need to use a workaround with a rest sensor
 
 Requirements:
-- File integration
+- File integration https://www.home-assistant.io/integrations/file/
 - Conversation agent integration (e.g. OpenAi Conversation)
 - Raspberry Pi hardware (I use Raspberry Pi 4)
 
@@ -17,7 +17,7 @@ Requirements:
 
 *Preliminary steps and saving Assist conversations*
 
-1) Use the File integration (https://www.home-assistant.io/integrations/file/) to write the responses to a file with path (e.g. "/config/log/assistant_responses.log") in order to store all responses permanently
+1) Use the File integration to write the responses to a file with path (e.g. "/config/log/assistant_responses.log") in order to store all responses permanently
  
 2) Add the Home Assistant script
 
