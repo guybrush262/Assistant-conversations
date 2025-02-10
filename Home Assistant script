@@ -1,0 +1,20 @@
+sequence:
+  - metadata: {}
+    data:
+      message: >-
+        | {{ now().strftime('%Y-%m-%d') }} | {{ now().strftime('%H:%M:%S') }} |
+        {{message}}
+    target:
+      entity_id: notify.file
+    action: notify.send_message
+alias: AI_Add conversations to log
+mode: single
+fields:
+  message:
+    selector:
+      text: null
+    name: message
+    description: >-
+      The given message will be added in the log file and it will have date and
+      time as prefix
+description: ""
