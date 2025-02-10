@@ -1,0 +1,21 @@
+alias: AI_Saving Assist conversations
+description: ""
+triggers:
+  - trigger: conversation
+    command: "{question}"
+conditions: []
+actions:
+  - action: conversation.process
+    metadata: {}
+    data:
+      agent_id: conversation.openai_jarvis
+      text: "{{ trigger.slots.question }}"
+    response_variable: chatgpt
+  - set_conversation_response: "{{ chatgpt.response.speech.plain.speech }}"
+  - action: script.ai_add_conversations_to_log
+    metadata: {}
+    data:
+      message: >-
+        User: '{{ trigger.slots.question }}' | Assistant: '{{
+        chatgpt.response.speech.plain.speech }}'
+mode: single
