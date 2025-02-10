@@ -1,6 +1,6 @@
 # Assistant Conversations
 
-<u>Introduction</u>
+# Introduction
 The project aim to save conversations with Assist so that future conversations can be contextualized:
 1.	Saving conversations held with Assist to a database
 2.	Recalling past conversations by the Conversation Agent reading the database via indication in the integration service prompt
@@ -10,7 +10,7 @@ Requirements:
 - Conversation agent integration (e.g. OpenAi Conversation)
 - Raspberry Pi hardware (I use Raspberry Pi 4)
 
-<u>Tutorial</u>
+# Tutorial
 *Preliminary steps*
 1) Add to configuration.yaml:
   homeassistant:
