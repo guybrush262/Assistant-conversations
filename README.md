@@ -83,15 +83,18 @@ sudo nano /etc/systemd/system/log_service.service
 
 and inside it input the Service code.
 
+15) Activate and start the service:
+    
+sudo systemctl daemon-reload 
+
+sudo systemctl enable log_service
+
+sudo systemctl start log_service
 
 *Finalize the Home Assistant configuration*
 
 16) In configuration.yaml add the Home Assistant sensor.
 
-17) In OpenAI Conversation (or whatever conversation agetn you chose) add the following to the instructions/prompt template:
-    
-    instructions: >
-      {{ state_attr('sensor.assist_conversation_history', 'log') }}
-      User: {{ user_input }}
-      Assistant:
+17) In OpenAI Conversation (or whatever conversation agetn you chose) add the Prompt to the instructions/prompt template.
+
 
