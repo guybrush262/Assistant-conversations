@@ -4,7 +4,7 @@
 # Introduction
 The project aim to save conversations with Assist so that future conversations can be contextualized:
 1.	Saving conversations held with Assist to a database
-2.	Recalling past conversations by the Conversation Agent reading the database via indication in the integration service prompt
+2.	Recalling past conversations by the conversation agent reading the database via referencing it in the prompt of the conversationa agent integration service. Note that it cannot directly read a file, so we need to use a workaround with a rest sensor
 
 Requirements:
 - File integration
