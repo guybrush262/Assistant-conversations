@@ -23,7 +23,10 @@ Requirements:
 
 
 *Configure the Rapsberry Pi*
-xxx
+3) Install Raspberry Pi OS Lite 64-bit (Bookworm)
+4) Update packages: sudo apt update && sudo apt upgrade -y
+5) Install Python 3 and pip: sudo apt install python3 python3-pip -y
+6) Create a virtual environment: sudo apt install python3-venv -y
 
 
 *Finalize the Home Assistant configuration*
