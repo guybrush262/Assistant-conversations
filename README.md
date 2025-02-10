@@ -14,6 +14,7 @@ Requirements:
 
 # Tutorial
 
+
 *Preliminary steps and saving Assist conversations*
 
 1) Use the File integration (https://www.home-assistant.io/integrations/file/) to write the responses to a file with path (e.g. "/config/log/assistant_responses.log") in order to store all responses permanently
@@ -25,12 +26,12 @@ Requirements:
 4) Add the following to configuration.yaml:
    
 homeassistant:
+
    allowlist_external_dirs:
+        
      - /config/www
         
 6) Create a Long-lived access token in Home Assistant
-
-
 
  
 *Configure the Rapsberry Pi*
@@ -45,7 +46,7 @@ sudo apt update && sudo apt upgrade -y
     
 sudo apt install python3 python3-pip -y
 
-11) Create a virtual environment:
+10) Create a virtual environment:
     
 sudo apt install python3-venv -y
 
@@ -54,7 +55,7 @@ and
 python3 -m venv flask_env
 source flask_env/bin/activate
 
-10) Install Flask and Request:
+11) Install Flask and Request:
     
 pip install flask
 
@@ -62,7 +63,7 @@ and
 
 pip install requests
 
-11) Create the Python script in "/home/plinio1/log_service.py" (my folder is called plinio1) remembering to inpu the Long-lived access token:
+12) Create the Python script in "/home/plinio1/log_service.py" (my folder is called plinio1) remembering to inpu the Long-lived access token:
 
 Move there:
 
@@ -72,7 +73,7 @@ and
 
 nano log_service.py
 
-12) Execute the script:
+13) Execute the script:
     
 cd /home/plinio1/
 
@@ -99,7 +100,7 @@ User=plinio1
 [Install]
 WantedBy=multi-user.target
 
-14) Activate and start the service:
+15) Activate and start the service:
     
 sudo systemctl daemon-reload 
 
@@ -108,13 +109,11 @@ sudo systemctl enable log_service
 sudo systemctl start log_service
 
 
-
-
 *Finalize the Home Assistant configuration*
 
-15) In configuration.yaml add the Home Assistant sensor.
+16) In configuration.yaml add the Home Assistant sensor.
 
-16) In OpenAI Conversation (or whatever conversation agetn you chose) add the following to the instructions/prompt template:
+17) In OpenAI Conversation (or whatever conversation agetn you chose) add the following to the instructions/prompt template:
     
     instructions: >
       {{ state_attr('sensor.assist_conversation_history', 'log') }}
