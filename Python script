@@ -1,0 +1,23 @@
+import requests
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+HA_URL = "http://<HA_IP>:8123/local/log/assistant_responses.log"
+HEADERS = {
+    "Authorization": "Bearer <YOUR_LONG_LIVED_ACCESS_TOKEN>"
+}
+
+@app.route('/conversation_log', methods=['GET'])
+def get_log():
+    try:
+        response = requests.get("http://<HA_IP>:8123/local/log/assistant_responses.log")
+        if response.status_code == 200:
+            return jsonify({"log": response.text})
+        else:
+            return jsonify({"error": "Failed to fetch log from HA"}), response.status_code
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
