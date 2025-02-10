@@ -34,7 +34,7 @@ homeassistant:
  
 *Configure the Rapsberry Pi*
    
-6) Install Raspberry Pi OS Lite 64-bit (Bookworm) on a SD card
+6) Install Raspberry Pi OS Lite 64-bit (Bookworm) on a SD card. I'm using "jarvis" as username example
 
 7) Update packages:
    
@@ -58,7 +58,7 @@ pip install flask
 
 pip install requests
 
-12) Create the Python script in "/home/jarvis/log_service.py" (my folder is called "jarvis") remembering to inpu the Long-lived access token:
+12) Create the Python script in "/home/jarvis/log_service.py" remembering to inpu the Long-lived access token:
 
 Move there:
 
