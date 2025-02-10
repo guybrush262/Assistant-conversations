@@ -58,7 +58,7 @@ pip install flask
 
 pip install requests
 
-12) Create the Python script in "/home/jarvis/log_service.py" remembering to inpu the Long-lived access token:
+12) Create the "Python script" in "/home/jarvis/log_service.py" remembering to input the Long-lived access token created earlier:
 
 Move there:
 
