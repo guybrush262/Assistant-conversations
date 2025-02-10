@@ -1,0 +1,5 @@
+Also use the tracking of past conversations to answer questions:
+instructions: >
+  {{ state_attr('sensor.assist_conversation_history', 'log') }}
+  User: {{ user_input }}
+  Assistant:
