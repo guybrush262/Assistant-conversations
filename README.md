@@ -25,10 +25,14 @@ Requirements:
 4) Add to configuration.yaml:
    
   homeassistant:
+  
     allowlist_external_dirs:
+    
       - /config/www
         
 6) Create a Long-lived access token in Home Assistant
+
+
 
  
 *Configure the Rapsberry Pi*
@@ -104,6 +108,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable log_service
 
 sudo systemctl start log_service
+
+
 
 
 *Finalize the Home Assistant configuration*
