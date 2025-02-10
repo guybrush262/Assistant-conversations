@@ -24,12 +24,10 @@ Requirements:
 3) Add the Home Assistant automation
 
 4) Add the following to configuration.yaml:
-   
-homeassistant:
 
-   allowlist_external_dirs:
-        
-     - /config/www
+homeassistant:
+  allowlist_external_dirs:
+    - /config/www
         
 6) Create a Long-lived access token in Home Assistant
 
