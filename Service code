@@ -3,12 +3,12 @@ Description=Flask Log Service
 After=network.target
 
 [Service]
-ExecStart=/home/plinio1/flask_env/bin/python3 /home/plinio1/log_service.py
-WorkingDirectory=/home/plinio1
+ExecStart=/home/jarvis/flask_env/bin/python3 /home/jarvis/log_service.py
+WorkingDirectory=/home/jarvis
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
-User=plinio1
+User=jarvis
 
 [Install]
 WantedBy=multi-user.target
