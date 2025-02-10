@@ -21,7 +21,7 @@ Requirements:
 
 2) Use the File integration (https://www.home-assistant.io/integrations/file/) to write the responses to a file with path (e.g. "/config/log/assistant_responses.log") in order to store all responses permanently.
 
-3) Create a Long-lived access tokens.
+3) Create a Long-lived access token.
 
 *Configure the Rapsberry Pi*
 4) Install Raspberry Pi OS Lite 64-bit (Bookworm)
@@ -47,7 +47,7 @@ and
 
 pip install requests
 
-9) Create a Python script in "/home/plinio1/log_service.py" (my folder is called plinio1):
+9) Create the Python script in "/home/plinio1/log_service.py" (my folder is called plinio1) remembering to inpu the Long-lived access token:
 Move there:
 cd /home/plinio1
 
@@ -55,9 +55,39 @@ and
 
 nano log_service.py
 
+9) Execute the script:
+cd /home/plinio1/
+python3 log_service.py
+
+10) Automate the script execution:
+sudo nano /etc/systemd/system/log_service.service
+
+and inside it input the following code:
+
+[Unit]
+Description=Flask Log Service
+After=network.target
+
+[Service]
+ExecStart=/home/plinio1/flask_env/bin/python3 /home/plinio1/log_service.py
+WorkingDirectory=/home/plinio1
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=plinio1
+
+[Install]
+WantedBy=multi-user.target
+
+11) Activate and start the service:
+sudo systemctl daemon-reload 
+sudo systemctl enable log_service
+sudo systemctl start log_service
 
 
 *Finalize the Home Assistant configuration*
-3) Add the Home Assistant script.
+12) Add the Home Assistant script.
 
-4) Add the Home Assistant automation.
+13) Add the Home Assistant automation.
+
+14) In configuration.yaml add the Home Assistant sensor.
