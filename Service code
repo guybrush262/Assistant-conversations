@@ -1,0 +1,14 @@
+[Unit]
+Description=Flask Log Service
+After=network.target
+
+[Service]
+ExecStart=/home/plinio1/flask_env/bin/python3 /home/plinio1/log_service.py
+WorkingDirectory=/home/plinio1
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=plinio1
+
+[Install]
+WantedBy=multi-user.target
