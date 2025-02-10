@@ -1,0 +1,8 @@
+sensor:
+  - platform: rest
+    name: "Assist conversation history"
+    resource: "http://IP_RASPBERRY:5000/conversation_log"
+    value_template: "{{ value_json.log | truncate(255) }}"
+    scan_interval: 60
+    json_attributes:
+      - log
