@@ -58,47 +58,6 @@ nano log_service.py
 
 
 *Finalize the Home Assistant configuration*
-3) Create the following script:
-   sequence:
-  - metadata: {}
-    data:
-      message: >-
-        | {{ now().strftime('%Y-%m-%d') }} | {{ now().strftime('%H:%M:%S') }} |
-        {{message}}
-    target:
-      entity_id: notify.file_2
-    action: notify.send_message
-alias: AI_Add conversations to log
-mode: single
-fields:
-  message:
-    selector:
-      text: null
-    name: message
-    description: >-
-      The given message will be added in the log file and it will have date and
-      time as prefix
-description: ""
+3) Add the Home Assistant script.
 
-4) Create the following automation:
-alias: AI-Saving Assist conversations
-description: ""
-triggers:
-  - trigger: conversation
-    command: "{question}"
-conditions: []
-actions:
-  - action: conversation.process
-    metadata: {}
-    data:
-      agent_id: conversation.openai_jarvis
-      text: "{{ trigger.slots.question }}"
-    response_variable: chatgpt
-  - set_conversation_response: "{{ chatgpt.response.speech.plain.speech }}"
-  - action: script.ai_add_conversations_to_log
-    metadata: {}
-    data:
-      message: >-
-        User: '{{ trigger.slots.question }}' | Assistant: '{{
-        chatgpt.response.speech.plain.speech }}'
-mode: single
+4) Add the Home Assistant automation.
