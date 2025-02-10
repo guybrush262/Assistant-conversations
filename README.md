@@ -2,7 +2,7 @@
 
 
 # Introduction
-The project aim to save conversations with Assist so that future conversations can be contextualized:
+The project aim to save Home Assistant conversations with Assist so that future conversations can be contextualized:
 1.	Saving conversations held with Assist to a database
 2.	Recalling past conversations by the conversation agent reading the database via referencing it in the prompt of the conversationa agent integration service. Note that it cannot directly read a file, so we need to use a workaround with a rest sensor
 
@@ -19,9 +19,9 @@ Requirements:
 
 1) Use the File integration to write the responses to a file with path (e.g. "/config/log/assistant_responses.log") in order to store all responses permanently
  
-2) Add the Home Assistant script
+2) Add the "Home Assistant script"
 
-3) Add the Home Assistant automation
+3) Add the "Home Assistant automation"
 
 4) Add the following to configuration.yaml:
 
@@ -78,7 +78,7 @@ python3 log_service.py
     
 sudo nano /etc/systemd/system/log_service.service
 
-and inside it input the Service code.
+and inside it input the "Service code".
 
 15) Activate and start the service:
     
@@ -90,8 +90,8 @@ sudo systemctl start log_service
 
 *Finalize the Home Assistant configuration*
 
-16) In configuration.yaml add the Home Assistant sensor.
+16) In configuration.yaml add the "Home Assistant sensor".
 
-17) In OpenAI Conversation (or whatever conversation agetn you chose) add the Prompt to the instructions/prompt template.
+17) In OpenAI Conversation (or whatever conversation agetn you chose) add the "Prompt" to the instructions/prompt template.
 
 
