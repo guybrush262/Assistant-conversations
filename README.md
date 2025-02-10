@@ -81,30 +81,7 @@ python3 log_service.py
     
 sudo nano /etc/systemd/system/log_service.service
 
-and inside it input the following code:
-
-[Unit]
-Description=Flask Log Service
-After=network.target
-
-[Service]
-ExecStart=/home/plinio1/flask_env/bin/python3 /home/plinio1/log_service.py
-WorkingDirectory=/home/plinio1
-StandardOutput=inherit
-StandardError=inherit
-Restart=always
-User=plinio1
-
-[Install]
-WantedBy=multi-user.target
-
-15) Activate and start the service:
-    
-sudo systemctl daemon-reload 
-
-sudo systemctl enable log_service
-
-sudo systemctl start log_service
+and inside it input the Service code.
 
 
 *Finalize the Home Assistant configuration*
