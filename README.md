@@ -48,24 +48,21 @@ sudo apt install python3 python3-pip -y
     
 sudo apt install python3-venv -y
 
-and
-
 python3 -m venv flask_env
+
 source flask_env/bin/activate
 
 11) Install Flask and Request:
     
 pip install flask
 
-and
-
 pip install requests
 
-12) Create the Python script in "/home/plinio1/log_service.py" (my folder is called plinio1) remembering to inpu the Long-lived access token:
+12) Create the Python script in "/home/jarvis/log_service.py" (my folder is called "jarvis") remembering to inpu the Long-lived access token:
 
 Move there:
 
-cd /home/plinio1
+cd /home/jarvis
 
 and
 
@@ -73,7 +70,7 @@ nano log_service.py
 
 13) Execute the script:
     
-cd /home/plinio1/
+cd /home/jarvis/
 
 python3 log_service.py
 
