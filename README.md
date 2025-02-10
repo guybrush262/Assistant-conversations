@@ -1,5 +1,6 @@
 # Assistant Conversations
 
+
 # Introduction
 The project aim to save conversations with Assist so that future conversations can be contextualized:
 1.	Saving conversations held with Assist to a database
@@ -10,6 +11,7 @@ Requirements:
 - Conversation agent integration (e.g. OpenAi Conversation)
 - Raspberry Pi hardware (I use Raspberry Pi 4)
 
+
 # Tutorial
 *Preliminary steps*
 1) Add to configuration.yaml:
@@ -19,8 +21,10 @@ Requirements:
 
 2) Use the File integration (https://www.home-assistant.io/integrations/file/) to write the responses to a file with path (e.g. "/config/log/assistant_responses.log") in order to store all responses permanently.
 
+
 *Configure the Rapsberry Pi*
 xxx
+
 
 *Finalize the Home Assistant configuration*
 3) Create the following script:
