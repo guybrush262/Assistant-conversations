@@ -29,7 +29,7 @@ homeassistant:
   allowlist_external_dirs:
     - /config/www
         
-6) Create a Long-lived access token in Home Assistant
+5) Create a Long-lived access token in Home Assistant
 
  
 *Configure the Rapsberry Pi*
@@ -40,11 +40,11 @@ homeassistant:
    
 sudo apt update && sudo apt upgrade -y
 
-9) Install Python 3 and pip:
+8) Install Python 3 and pip:
     
 sudo apt install python3 python3-pip -y
 
-10) Create a virtual environment:
+9) Create a virtual environment:
     
 sudo apt install python3-venv -y
 
@@ -52,13 +52,13 @@ python3 -m venv flask_env
 
 source flask_env/bin/activate
 
-11) Install Flask and Request:
+10) Install Flask and Request:
     
 pip install flask
 
 pip install requests
 
-12) Create the "Python script" in "/home/jarvis/log_service.py" remembering to input the Long-lived access token created earlier:
+11) Create the "Python script" in "/home/jarvis/log_service.py" remembering to input the Long-lived access token created earlier:
 
 Move there:
 
@@ -68,19 +68,19 @@ and
 
 nano log_service.py
 
-13) Execute the script:
+12) Execute the script:
     
 cd /home/jarvis/
 
 python3 log_service.py
 
-14) Automate the script execution:
+13) Automate the script execution:
     
 sudo nano /etc/systemd/system/log_service.service
 
 and inside it input the "Service code".
 
-15) Activate and start the service:
+14) Activate and start the service:
     
 sudo systemctl daemon-reload 
 
@@ -92,6 +92,6 @@ sudo systemctl start log_service
 
 16) In configuration.yaml add the "Home Assistant sensor".
 
-17) In OpenAI Conversation (or whatever conversation agetn you chose) add the "Prompt" to the instructions/prompt template.
+17) In OpenAI Conversation (or whatever conversation agent you chose) add the "Prompt" to the instructions/prompt template.
 
 
